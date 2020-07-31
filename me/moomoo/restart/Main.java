@@ -41,96 +41,10 @@ public class Main extends JavaPlugin implements Listener {
                 try {
                     restarttimerdone = "true";
                     if(Bukkit.getServer().getOnlinePlayers().size() > getConfig().getInt("MinimumPlayersToRestart")){
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                        sleep(300000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                        sleep(300000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                        sleep(180000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                        sleep(105000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 14 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 13 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 12 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 11 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 9 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 8 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 7 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 6 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 4 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 3 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 1 second...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting...");
-                        Bukkit.shutdown();
+                        restart();
                     } else {
                         sleep(432000000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                        sleep(300000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                        sleep(300000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                        sleep(180000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                        sleep(105000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 14 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 13 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 12 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 11 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 9 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 8 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 7 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 6 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 4 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 3 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 seconds...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 1 second...");
-                        sleep(1000);
-                        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting...");
-                        Bukkit.shutdown();
+                        restart();
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -154,50 +68,7 @@ public class Main extends JavaPlugin implements Listener {
                         Thread t = new Thread(() -> {
                             try {
                                 playerslow = "true";
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
-                                sleep(300000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
-                                sleep(300000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
-                                sleep(180000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
-                                sleep(105000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 14 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 13 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 12 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 11 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 9 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 8 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 7 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 6 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 4 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 3 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 seconds...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 1 second...");
-                                sleep(1000);
-                                Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting...");
-                                Bukkit.shutdown();
+                                restart();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -210,5 +81,52 @@ public class Main extends JavaPlugin implements Listener {
             }
 
         }
+    }
+    
+    public void restart() throws InterruptedException {
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
+        sleep(300000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 minutes...");
+        sleep(300000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 minutes...");
+        sleep(180000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 minutes...");
+        sleep(105000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 14 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 13 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 12 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 11 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 10 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 9 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 8 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 7 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 6 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 5 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 4 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 3 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 2 seconds...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 1 second...");
+        sleep(1000);
+        Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting...");
+        Bukkit.shutdown();
     }
 }
