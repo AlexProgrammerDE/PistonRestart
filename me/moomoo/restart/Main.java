@@ -40,7 +40,7 @@ public class Main extends JavaPlugin implements Listener {
             Thread t = new Thread(() -> {
                 try {
                     restarttimerdone = "true";
-                    if(Bukkit.getServer().getOnlinePlayers().size() > getConfig().getInt("MinimumPlayersToRestart")){
+                    if(Bukkit.getServer().getOnlinePlayers().size() < getConfig().getInt("MinimumPlayersToRestart")){
                         restart();
                     } else {
                         sleep(432000000);
@@ -64,7 +64,7 @@ public class Main extends JavaPlugin implements Listener {
                 Bukkit.shutdown();
             } else {
                 if(playerslow != "true"){
-                    if(count > getConfig().getInt("MinimumPlayersToRestart")){
+                    if(count < getConfig().getInt("MinimumPlayersToRestart")){
                         Thread t = new Thread(() -> {
                             try {
                                 playerslow = "true";
@@ -82,7 +82,7 @@ public class Main extends JavaPlugin implements Listener {
 
         }
     }
-    
+
     public void restart() throws InterruptedException {
         Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
         Bukkit.broadcastMessage("§e" + "[SERVER] Server restarting in 15 minutes...");
