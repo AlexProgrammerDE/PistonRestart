@@ -23,6 +23,8 @@ public class Main extends JavaPlugin implements Listener {
     String playerslow = "false";
 
     public void onEnable() {
+        int pluginId = 8987; // <-- Replace with the id of your plugin!
+        Metrics metrics = new Metrics(this, pluginId);
         saveDefaultConfig();
         System.out.println("[ENABLED] moomoo's 2b2t restart notifications plugin");
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
