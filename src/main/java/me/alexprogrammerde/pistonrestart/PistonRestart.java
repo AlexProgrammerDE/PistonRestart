@@ -28,10 +28,10 @@ public class PistonRestart extends JavaPlugin implements Listener {
 
         log.info(ChatColor.GOLD + "Registering listeners");
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
+
         int hour = getConfig().getInt("Hour");
         int minutes = getConfig().getInt("Minute");
         int seconds = getConfig().getInt("Seconds");
-
         ZonedDateTime now = ZonedDateTime.now(ZoneId.of(getConfig().getString("Timezone")));
         ZonedDateTime nextRun = now.withHour(hour).withMinute(minutes).withSecond(seconds);
 
@@ -47,7 +47,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
                     restartTimerDone = true;
 
                     if (Bukkit.getServer().getOnlinePlayers().size() >= getConfig().getInt("MinimumPlayersToRestart")) {
-                        sleep(432000000);
+                        sleep(432000000); // 5 days
                     }
 
                     restart();
@@ -61,7 +61,9 @@ public class PistonRestart extends JavaPlugin implements Listener {
         }, initialDelay, TimeUnit.DAYS.toSeconds(1), TimeUnit.SECONDS);
 
         log.info(ChatColor.GOLD + "Loading metrics");
-        new Metrics(this, 8987);
+        new Metrics(this, 9748);
+
+        log.info(ChatColor.GOLD + "Done! :D");
     }
 
     @EventHandler

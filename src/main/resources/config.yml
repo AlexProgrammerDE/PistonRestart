@@ -1,6 +1,6 @@
-# 2b2t restart plugin
+# PistonRestart
 
-# Set to 99999999 to restart exactly at your specified time
+# Set to 99999 to restart exactly at your specified time
 # If the players are not low for 5 days then the server will forcefully restart even if there is a ton of players online.
 MinimumPlayersToRestart: 4
 
@@ -9,6 +9,7 @@ MinimumPlayersToRestart: 4
 # then it will start a 15 minute countdown.
 # List of timezones: https://garygregory.wordpress.com/2013/06/18/what-are-the-java-timezone-ids/
 Timezone: "America/New_York"
+
 # Time
 # 2:00 AM EST
 Hour: 2
