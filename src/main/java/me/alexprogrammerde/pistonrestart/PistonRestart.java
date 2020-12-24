@@ -29,6 +29,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
         log.info(ChatColor.GOLD + "Registering listeners");
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
+        log.info(ChatColor.GOLD + "Calculating time");
         int hour = getConfig().getInt("Hour");
         int minutes = getConfig().getInt("Minute");
         int seconds = getConfig().getInt("Seconds");
@@ -41,6 +42,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
         Duration duration = Duration.between(now, nextRun);
         long initialDelay = duration.getSeconds();
 
+        log.info(ChatColor.GOLD + "Scheduling restart");
         Executors.newScheduledThreadPool(1).scheduleAtFixedRate(() -> {
             Thread t = new Thread(() -> {
                 try {
@@ -64,6 +66,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
         new Metrics(this, 9748);
 
         log.info(ChatColor.GOLD + "Done! :D");
+        log.info(ChatColor.GOLD + "Next scheduled restart in: " + initialDelay / 3600 + "h " + (initialDelay % 3600) / 60 + "m");
     }
 
     @EventHandler
