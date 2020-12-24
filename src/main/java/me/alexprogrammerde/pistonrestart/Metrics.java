@@ -1,4 +1,4 @@
-package me.moomoo.restart;
+package me.alexprogrammerde.pistonrestart;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
