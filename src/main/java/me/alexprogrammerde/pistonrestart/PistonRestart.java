@@ -70,15 +70,15 @@ public class PistonRestart extends JavaPlugin implements Listener {
     }
 
     @EventHandler
-    public void onLeave(PlayerQuitEvent evt){
+    public void onLeave(PlayerQuitEvent evt) {
         int count = Bukkit.getServer().getOnlinePlayers().size();
 
         if (restartTimerDone) {
-            if (count == 0){
+            if (count == 0) {
                 Bukkit.shutdown();
             } else {
-                if (!playersLow){
-                    if (count < getConfig().getInt("MinimumPlayersToRestart")){
+                if (!playersLow) {
+                    if (count < getConfig().getInt("MinimumPlayersToRestart")) {
                         Thread t = new Thread(() -> {
                             try {
                                 playersLow = true;
@@ -92,7 +92,6 @@ public class PistonRestart extends JavaPlugin implements Listener {
                     }
                 }
             }
-
         }
     }
 
