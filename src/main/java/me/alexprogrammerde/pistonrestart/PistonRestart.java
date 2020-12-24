@@ -66,7 +66,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
         new Metrics(this, 9748);
 
         log.info(ChatColor.GOLD + "Done! :D");
-        log.info(ChatColor.GOLD + "Next scheduled restart in: " + initialDelay / 3600 + "h " + (initialDelay % 3600) / 60 + "m");
+        log.info(ChatColor.GOLD + "Next restart in: " + initialDelay / 3600 + "h " + (initialDelay % 3600) / 60 + "m");
     }
 
     @EventHandler
