@@ -1,0 +1,5 @@
+name: PistonRestart
+author: AlexProgrammerDE
+version: ${project.version}
+main: me.alexprogrammerde.pistonrestart.PistonRestart
+descripton: ${project.description}
