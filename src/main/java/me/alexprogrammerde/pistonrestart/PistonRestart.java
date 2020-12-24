@@ -11,7 +11,6 @@ import java.time.Duration;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -29,20 +28,24 @@ public class PistonRestart extends JavaPlugin implements Listener {
 
         log.info(ChatColor.GOLD + "Registering listeners");
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
+        int hour = getConfig().getInt("Hour");
+        int minutes = getConfig().getInt("Minute");
+        int seconds = getConfig().getInt("Seconds");
 
         ZonedDateTime now = ZonedDateTime.now(ZoneId.of(getConfig().getString("Timezone")));
-        ZonedDateTime nextRun = now.withHour(getConfig().getInt("Hour")).withMinute(getConfig().getInt("Minute")).withSecond(getConfig().getInt("Seconds"));
+        ZonedDateTime nextRun = now.withHour(hour).withMinute(minutes).withSecond(seconds);
+
         if (now.compareTo(nextRun) > 0)
             nextRun = nextRun.plusDays(1);
 
         Duration duration = Duration.between(now, nextRun);
         long initialDelay = duration.getSeconds();
 
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(() -> {
+        Executors.newScheduledThreadPool(1).scheduleAtFixedRate(() -> {
             Thread t = new Thread(() -> {
                 try {
                     restartTimerDone = true;
+
                     if (Bukkit.getServer().getOnlinePlayers().size() >= getConfig().getInt("MinimumPlayersToRestart")) {
                         sleep(432000000);
                     }
@@ -65,7 +68,7 @@ public class PistonRestart extends JavaPlugin implements Listener {
     public void onLeave(PlayerQuitEvent evt){
         int count = Bukkit.getServer().getOnlinePlayers().size();
 
-        if (restartTimerDone){
+        if (restartTimerDone) {
             if (count == 0){
                 Bukkit.shutdown();
             } else {
@@ -91,19 +94,19 @@ public class PistonRestart extends JavaPlugin implements Listener {
     public void restart() throws InterruptedException {
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 15 minutes...");
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 15 minutes...");
-        sleep(300000);
+        sleep(300 * 1000);
 
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 10 minutes...");
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 10 minutes...");
-        sleep(300000);
+        sleep(300 * 1000);
 
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 5 minutes...");
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 5 minutes...");
-        sleep(180000);
+        sleep(180 * 1000);
 
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 2 minutes...");
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 2 minutes...");
-        sleep(105000);
+        sleep(105 * 1000);
 
         Bukkit.broadcastMessage(ChatColor.YELLOW + "[SERVER] Server restarting in 15 seconds...");
         sleep(1000);
